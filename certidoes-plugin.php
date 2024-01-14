@@ -1,9 +1,9 @@
 <?php
 
 /*
-Plugin Name: Certidões
+Plugin Name: Validity Certificates
 Description: Cadastre certidões com data devalidade.
-Version: 1.2
+Version: 1.0
 Author: Pissinet Sites
 */
 
@@ -211,11 +211,6 @@ function certidoes_process_form() {
 
         $nome_documento = sanitize_text_field($_POST['nome_documento']);
         $data_validade = ! empty($_POST['data_validade']) ? sanitize_text_field($_POST['data_validade']) : null;
-
-        // Manipular o upload do documento (você pode personalizar conforme necessário)
-        // $upload_dir = wp_upload_dir();
-        // $documento_path = $upload_dir['url'] . '/' . basename($_FILES['documento']['name']);
-        // move_uploaded_file($_FILES['documento']['tmp_name'], $documento_path);
         
         $upload_dir = wp_upload_dir();
         $documento_path = $upload_dir['path'] . '/' . basename($_FILES['documento']['name']);
